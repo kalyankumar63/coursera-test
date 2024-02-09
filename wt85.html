@@ -1,0 +1,26 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myController">
+<label>Enter first name:</label>
+<input type="text" ng-model="firstName"><br></br>
+<label>Enter last name:</label>
+<input type="text" ng-model="lastName"><br></br>
+<button ng-click="displayFullName()">Full Name</button>
+<p><b>Full Name:</b>{{fullName}}</p>
+</div>
+<script>
+var app=angular.module("myApp",[]);
+app.controller("myController",function($scope){
+$scope.firstName="";
+$scope.lastName="";
+$scope.fullName="";
+$scope.displayFullName=function(){
+$scope.fullName=$scope.firstName+" "+$scope.lastName;
+};
+});
+</script>
+</body>
+</html>
